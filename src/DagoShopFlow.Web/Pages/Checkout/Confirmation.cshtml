@@ -1,0 +1,32 @@
+@page
+@model DagoShopFlow.Web.Pages.Checkout.ConfirmationModel
+@{
+    ViewData["Title"] = "Order Confirmed";
+}
+
+<div class="text-center py-5" data-testid="order-confirmation">
+    <i class="bi bi-check-circle-fill text-success display-1"></i>
+    <h1 class="h2 mt-3">Thank you for your order!</h1>
+    <p class="text-muted fs-5">Your order has been placed successfully.</p>
+
+    <div class="card shadow-sm mx-auto mt-4" style="max-width:500px">
+        <div class="card-body">
+            <h5 class="card-title">Order Details</h5>
+            <hr />
+            <dl class="row text-start mb-0">
+                <dt class="col-5">Order Number:</dt>
+                <dd class="col-7" data-testid="confirmation-order-id">#@Model.OrderId</dd>
+                <dt class="col-5">Name:</dt>
+                <dd class="col-7" data-testid="confirmation-name">@Model.CustomerName</dd>
+                <dt class="col-5">Email:</dt>
+                <dd class="col-7" data-testid="confirmation-email">@Model.Email</dd>
+                <dt class="col-5">Order Total:</dt>
+                <dd class="col-7 fw-bold text-success" data-testid="confirmation-total">$@Model.Total</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-page="/Index" class="btn btn-primary">Continue Shopping</a>
+    </div>
+</div>

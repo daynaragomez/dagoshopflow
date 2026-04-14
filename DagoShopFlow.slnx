@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DagoShopFlow.Web/DagoShopFlow.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DagoShopFlow.AutoTests/DagoShopFlow.AutoTests.csproj" />
+    <Project Path="tests/DagoShopFlow.Tests/DagoShopFlow.Tests.csproj" />
+  </Folder>
+</Solution>

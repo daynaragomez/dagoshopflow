@@ -1,0 +1,60 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h2">@(string.IsNullOrEmpty(Model.SelectedCategory) ? "All Products" : Model.SelectedCategory)</h1>
+    <form method="get" class="d-flex" role="search">
+        <input type="search" name="search" value="@Model.SearchQuery" class="form-control me-2"
+               placeholder="Search products..." data-testid="search-input" />
+        <button type="submit" class="btn btn-outline-dark">Search</button>
+    </form>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <a asp-page="/Index" class="btn btn-sm @(string.IsNullOrEmpty(Model.SelectedCategory) ? "btn-dark" : "btn-outline-dark") me-1">All</a>
+        @foreach (var cat in Model.Categories)
+        {
+            <a asp-page="/Index" asp-route-category="@cat"
+               class="btn btn-sm @(Model.SelectedCategory == cat ? "btn-dark" : "btn-outline-dark") me-1">@cat</a>
+        }
+    </div>
+</div>
+
+@if (!Model.Products.Any())
+{
+    <div class="alert alert-info">No products found.</div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var product in Model.Products)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm" data-testid="product-card-@product.Id">
+                    <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="height:200px;object-fit:cover;" />
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-secondary mb-1">@product.Category</span>
+                        <h5 class="card-title">
+                            <a asp-page="/Products/Detail" asp-route-id="@product.Id" class="text-decoration-none text-dark">@product.Name</a>
+                        </h5>
+                        <p class="card-text text-muted small flex-grow-1">@product.Description.Substring(0, Math.Min(80, product.Description.Length))...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="fs-5 fw-bold text-success">$@product.Price.ToString("0.00")</span>
+                            <form method="post" asp-page-handler="AddToCart">
+                                <input type="hidden" name="productId" value="@product.Id" />
+                                <input type="hidden" name="qty" value="1" />
+                                <button type="submit" class="btn btn-primary btn-sm" data-testid="add-to-cart-@product.Id">
+                                    <i class="bi bi-cart-plus"></i> Add to Cart
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
