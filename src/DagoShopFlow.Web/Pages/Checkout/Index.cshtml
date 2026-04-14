@@ -1,0 +1,74 @@
+@page
+@model DagoShopFlow.Web.Pages.Checkout.IndexModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h1 class="h2 mb-4">Checkout</h1>
+
+<div class="row">
+    <div class="col-lg-7">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title mb-4">Shipping Information</h5>
+                <form method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" asp-for="Order.CustomerName" class="form-control"
+                               placeholder="John Doe" data-testid="checkout-name" required />
+                        <span asp-validation-for="Order.CustomerName" class="text-danger small"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" asp-for="Order.Email" class="form-control"
+                               placeholder="john@example.com" data-testid="checkout-email" required />
+                        <span asp-validation-for="Order.Email" class="text-danger small"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Street Address</label>
+                        <input type="text" asp-for="Order.Address" class="form-control"
+                               placeholder="123 Main St" data-testid="checkout-address" required />
+                        <span asp-validation-for="Order.Address" class="text-danger small"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 mb-3">
+                            <label class="form-label">City</label>
+                            <input type="text" asp-for="Order.City" class="form-control"
+                                   placeholder="New York" data-testid="checkout-city" required />
+                            <span asp-validation-for="Order.City" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <label class="form-label">ZIP Code</label>
+                            <input type="text" asp-for="Order.ZipCode" class="form-control"
+                                   placeholder="10001" data-testid="checkout-zip" required />
+                            <span asp-validation-for="Order.ZipCode" class="text-danger small"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg w-100" data-testid="submit-order">
+                        <i class="bi bi-check-circle"></i> Place Order
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Order Summary</h5>
+                <hr />
+                @foreach (var item in Model.CartItems)
+                {
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>@item.ProductName <span class="text-muted">x@(item.Quantity)</span></span>
+                        <span>$@((item.Price * item.Quantity).ToString("0.00"))</span>
+                    </div>
+                }
+                <hr />
+                <div class="d-flex justify-content-between fw-bold fs-5">
+                    <span>Total</span>
+                    <span>$@Model.Total.ToString("0.00")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+@using DagoShopFlow.Web.Services
+@inject ICartService CartService
+
+@{
+    var count = CartService.GetItemCount();
+}
+
+<a asp-page="/Cart/Index" class="btn btn-outline-light position-relative" data-testid="cart-icon">
+    <i class="bi bi-cart3"></i>
+    @if (count > 0)
+    {
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-testid="cart-count">
+            @count
+        </span>
+    }
+    else
+    {
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary" data-testid="cart-count">
+            0
+        </span>
+    }
+</a>

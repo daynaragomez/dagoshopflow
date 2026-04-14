@@ -1,0 +1,88 @@
+@page
+@model DagoShopFlow.Web.Pages.Cart.IndexModel
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+
+<h1 class="h2 mb-4">Shopping Cart</h1>
+
+@if (!Model.CartItems.Any())
+{
+    <div class="text-center py-5" data-testid="cart-empty">
+        <i class="bi bi-cart-x display-1 text-muted"></i>
+        <p class="fs-5 text-muted mt-3">Your cart is empty.</p>
+        <a asp-page="/Index" class="btn btn-primary">Continue Shopping</a>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-0">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Product</th>
+                                <th class="text-center">Quantity</th>
+                                <th class="text-end">Price</th>
+                                <th class="text-end">Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.CartItems)
+                            {
+                                <tr data-testid="cart-item-@item.ProductId">
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="@item.ImageUrl" alt="@item.ProductName" style="width:50px;height:50px;object-fit:cover;border-radius:4px;" />
+                                            <span>@item.ProductName</span>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <form method="post" asp-page-handler="UpdateQuantity" class="d-inline-flex align-items-center gap-1">
+                                            <input type="hidden" name="productId" value="@item.ProductId" />
+                                            <input type="number" name="qty" value="@item.Quantity" min="1" max="99"
+                                                   class="form-control form-control-sm text-center"
+                                                   style="width:70px" data-testid="qty-input-@item.ProductId" />
+                                            <button type="submit" class="btn btn-sm btn-outline-secondary" data-testid="update-qty-@item.ProductId">
+                                                <i class="bi bi-arrow-clockwise"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td class="align-middle text-end">$@item.Price.ToString("0.00")</td>
+                                    <td class="align-middle text-end fw-bold">$@((item.Price * item.Quantity).ToString("0.00"))</td>
+                                    <td class="align-middle text-end">
+                                        <form method="post" asp-page-handler="RemoveItem" class="d-inline">
+                                            <input type="hidden" name="productId" value="@item.ProductId" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger" data-testid="remove-item-@item.ProductId">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Order Summary</h5>
+                    <hr />
+                    <div class="d-flex justify-content-between fs-5 fw-bold">
+                        <span>Total</span>
+                        <span data-testid="cart-total">$@Model.Total.ToString("0.00")</span>
+                    </div>
+                    <a asp-page="/Checkout/Index" class="btn btn-success w-100 mt-3" data-testid="checkout-btn">
+                        Proceed to Checkout <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a asp-page="/Index" class="btn btn-outline-secondary w-100 mt-2">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
