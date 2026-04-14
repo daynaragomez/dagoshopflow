@@ -1,0 +1,13 @@
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\DagoShopFlow.Application.csproj.AssemblyReference.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\DagoShopFlow.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\DagoShopFlow.Application.AssemblyInfoInputs.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\DagoShopFlow.Application.AssemblyInfo.cs
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\DagoShopFlow.Application.csproj.CoreCompileInputs.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\DagoShopFlow.Application.sourcelink.json
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\bin\Debug\net10.0\DagoShopFlow.Application.deps.json
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\bin\Debug\net10.0\DagoShopFlow.Application.dll
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\bin\Debug\net10.0\DagoShopFlow.Application.pdb
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\DagoShopFlow.Application.dll
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\refint\DagoShopFlow.Application.dll
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\DagoShopFlow.Application.pdb
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Application\obj\Debug\net10.0\ref\DagoShopFlow.Application.dll

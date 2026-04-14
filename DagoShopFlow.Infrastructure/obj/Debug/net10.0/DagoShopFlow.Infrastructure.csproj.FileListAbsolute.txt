@@ -1,0 +1,6 @@
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Infrastructure\obj\Debug\net10.0\DagoShopFlow.Infrastructure.csproj.AssemblyReference.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Infrastructure\obj\Debug\net10.0\DagoShopFlow.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Infrastructure\obj\Debug\net10.0\DagoShopFlow.Infrastructure.AssemblyInfoInputs.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Infrastructure\obj\Debug\net10.0\DagoShopFlow.Infrastructure.AssemblyInfo.cs
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Infrastructure\obj\Debug\net10.0\DagoShopFlow.Infrastructure.csproj.CoreCompileInputs.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Infrastructure\obj\Debug\net10.0\DagoShopFlow.Infrastructure.sourcelink.json

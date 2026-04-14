@@ -1,0 +1,10 @@
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\DagoShopFlow.Web.csproj.AssemblyReference.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\DagoShopFlow.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\DagoShopFlow.Web.AssemblyInfoInputs.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\DagoShopFlow.Web.AssemblyInfo.cs
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\DagoShopFlow.Web.csproj.CoreCompileInputs.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\DagoShopFlow.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\DagoShopFlow.Web.RazorAssemblyInfo.cache
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\DagoShopFlow.Web.RazorAssemblyInfo.cs
+C:\workspace2\highspring\demo-app\src\DagoShopFlow.Web\obj\Debug\net10.0\DagoShopFlow.Web.sourcelink.json
